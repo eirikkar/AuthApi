@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 
 namespace AuthApi.Security;
-public class Hashing
+public class HashPassword
 {
     private int SaltSize = 16;
     private int HashSize = 32;
