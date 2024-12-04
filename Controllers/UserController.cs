@@ -8,30 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 public class UserController : ControllerBase
 {
     private readonly HashPassword _hashPassword;
-    private List<User> _users;
     public readonly UserDbContext _context;
 
     public UserController(HashPassword hashPassword, UserDbContext userDbContext)
     {
         _context = userDbContext;
         _hashPassword = hashPassword;
-        _users = new List<User>
-        {
-            new User
-            {
-                Id = Guid.NewGuid(),
-                Username = "user1",
-                Password = _hashPassword.Hash("password1"),
-                Email = "something@something",
-            },
-            new User
-            {
-                Id = Guid.NewGuid(),
-                Username = "user2",
-                Password = "password2",
-                Email = "something@something",
-            },
-        };
     }
 
     [HttpPost]
