@@ -1,4 +1,5 @@
 namespace AuthApi.Models;
+
 public class Topic
 {
     public Guid Id { get; set; }
