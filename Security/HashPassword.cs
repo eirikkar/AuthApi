@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 
+namespace AuthApi.Security;
 public class Hashing
 {
     private int SaltSize = 16;
