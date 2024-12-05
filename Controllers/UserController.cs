@@ -34,6 +34,10 @@ public class UserController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<User>> Get()
     {
+        if (_context.Users == null)
+        {
+            return NotFound();
+        }
         return _context.Users.ToList();
     }
 }
